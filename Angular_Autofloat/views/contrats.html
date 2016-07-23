@@ -1,0 +1,119 @@
+	<body ng-controller="AppController as ctrl"><br>
+
+<div ng-app="myApp">
+	<h2>Mes contrats</h2>
+
+	{{ legend }}
+	<br>
+			<!-- <div ng-app="floatApp">
+				<form> -->
+				<form ng-submit="ctrl.submit()" name="myForm" ng-controller="Ctrl">
+			  	<fieldset class="form-group">
+			  		<h4>Contrat du collaborateur:</h4>
+				    <label for="sela">Sélectionnez un type de véhicule:</label>
+		  			<select class="form-control" id="sela" required>
+		  				<option value="">Selectionnez un véhicule: </option> 
+		    			<option>VP</option>
+		    			<option>VU</option>
+		    			<option>VI</option>
+
+		  			</select>
+				    <small class="text-muted">Choix unique</small><br><br>
+				    <label for="sela">Sélectionnez un type de détention:</label>
+		  			<select class="form-control" id="sela" required>
+		  				<option value="">Sélectionnez un type de détention:</option> 
+		    			<option>LLD</option>
+		    			<option>LCD</option>
+		    			<option>Achat</option>
+		  			</select>
+				    <small class="text-muted">Choix unique</small><br><br>
+				    <label for="sela">Sélectionnez une société de location:</label>
+		  			<select class="form-control" id="sela" required>
+		  				<option value="">Sélectionnez une société de location:</option> 
+		    			<option>LEASEPLAN</option>
+		    			<option>ALPHABET</option>
+		    			<option>Autre</option>
+		  			</select><br />
+				    <label for="num_contrat">N° de contrat:</label>
+				    <input type="text" ng-model="ctrl.user.num_contrat" name="num_contrat" class="form-control" placeholder="" required>
+				     <span ng-show="myForm.$dirty && myForm.num_contrat.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.num_contrat.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.num_contrat.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+				    <label for="codep">Code postal:</label>
+				    <input type="text" ng-model="ctrl.user.codep" name="codep" class="form-control"  placeholder="Entrez un code postal" required>
+				     <span ng-show="myForm.$dirty && myForm.codep.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.codep.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.codep.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+				    <label for="ville">Ville:</label>
+				    <input type="text" ng-model="ctrl.user.ville" name="ville" class="form-control"  placeholder="Entrez une ville" required>
+				     <span ng-show="myForm.$dirty && myForm.ville.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.ville.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.ville.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+				    <label for="mobile">Mobile:</label>
+				    <input type="text" ng-model="ctrl.user.mobile" name="mobile" class="form-control"placeholder="Entrez un numéro" required>
+				     <span ng-show="myForm.$dirty && myForm.mobile.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.mobile.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.mobile.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+				    <label for="km">Kilomètrage:</label>
+				    <input type="text" ng-model="ctrl.user.km" name="km" class="form-control" placeholder="Entrez matricule" required>
+				     <span ng-show="myForm.$dirty && myForm.km.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.km.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.km.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+				    <label for="conso_mixte">Consommation mixte:</label>
+				    <input type="text" ng-model="ctrl.user.conso_mixte" name="conso_mixte" class="form-control"  placeholder="Entrez nom" required>
+				     <span ng-show="myForm.$dirty && myForm.conso_mixte.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.conso_mixte.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.conso_mixte.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+		  		</fieldset><br>
+		  		<fieldset>
+		  			<h4>Loyers:</h4>
+
+		  			<label for="lfin">Loyer financier:</label>
+				    <input type="text" ng-model="ctrl.user.lfin" name="lfin" class="form-control" placeholder="Entrez une montant" required>
+				    <span ng-show="myForm.$dirty && myForm.lfin.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.lfin.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.lfin.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+
+				    <label for="lpneu">Loyeux pneumatique:</label>
+				    <input type="text" ng-model="ctrl.user.lpneu" name="lpneu" class="form-control" placeholder="Entrez une montant" required>
+				    <span ng-show="myForm.$dirty && myForm.lpneu.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.lpneu.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.lpneu.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+
+				    <label for="pfin">Perte financière:</label>
+				    <input type="text" ng-model="ctrl.user.pfin" name="pfin"  class="form-control" placeholder="Entrez une montant" required>
+				    <span ng-show="myForm.$dirty && myForm.pfin.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.pfin.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.pfin.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+
+				    <label for="autre">Autre:</label>
+				    <input type="text" ng-model="ctrl.user.autre" name="autre" class="form-control" placeholder="Entrez une montant" required>
+				    <span ng-show="myForm.$dirty && myForm.autre.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.autre.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.autre.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+
+				    <label for="ltotal">Loyer total:</label>
+				    <input type="text" ng-model="ctrl.user.ltotal" name="ltotal" class="form-control" placeholder="Calcul une montant" required>
+				    <span ng-show="myForm.$dirty && myForm.ltotal.$error.required" class="has-error" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.ltotal.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+            <span ng-show="myForm.$dirty && myForm.ltotal.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+			<small class="text-muted">Total:</small>
+			<input type="text"/>
+            <br><br>
+		  	</fieldset>
+
+		  <input type="reset" value="Effacer"/>
+          <input type="submit"  value="Envoyer"/>
+			</form>
+			 <script>
+          angular.module('myApp', [])
+          .controller('AppController', [function($scope) {
+              var self = this;
+              self.submit = function() {
+                  console.log('Form is submitted with following user', self.user);
+            };
+
+
+      }]);
+  </script>
+   </div>

@@ -1,0 +1,302 @@
+/* make sidebar nav vertical */ 
+@media (min-width: 768px){
+  .affix-content .container {
+    width: 700px;
+  }   
+
+  html,body{
+    background-color: #f8f8f8;
+    height: 100%;
+ /*   background-image: url('bg.png');
+    background-size: cover;*/
+    /*Extend bg to body*/
+    background-image: url('bg.png'); 
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: 100% 100%;     /* Gecko 1.9.2 (Firefox 3.6) */
+    -o-background-size: 100% 100%;        /* Opera 9.5 */
+    -webkit-background-size: 100% 100%;   /* Safari 3.0 */
+    background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */ 
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .sidebar-nav{
+        position:fixed; 
+        width:100%;
+  }
+  .affix-sidebar{
+    padding-right:0; 
+    font-size:small;
+    padding-left: 0;
+  }  
+  .affix-row, .affix-container, .affix-content{
+/*    height: 100%;
+*/    margin-left: 0;
+    margin-right: 0;    
+  } 
+  .affix-content{
+    background-color:white; 
+  } 
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar{
+    border-radius:0; 
+    margin-bottom:0; 
+    border:0;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }  
+}
+
+@media (min-width: 769px){
+  .affix-content .container {
+    width: 600px;
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }  
+}
+
+@media (min-width: 992px){
+  .affix-content .container {
+  width: 900px;
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1220px){
+  .affix-row{
+    overflow: hidden;
+  }
+
+  .affix-content{
+    overflow: auto;
+  }
+
+  .affix-content .container {
+    width: 1000px;
+  }
+
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .affix-content{
+    padding-right: 30px;
+    padding-left: 30px;
+  }  
+  .affix-title{
+    border-bottom: 1px solid #ecf0f1; 
+    padding-bottom:10px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-collapse{
+    padding: 0;
+  }
+  .sidebar-nav .navbar li a:hover {
+    background-color: #becd50;
+    color: white;
+  }
+  .sidebar-nav .navbar li a > .caret {
+    margin-top: 8px;
+  }  
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+/*textarea{ resize:none;}
+#datepicker {resize: none;}*/
+
+/*textarea{resize: none; width: 447px;}*/
+
+
+/*Header sheets*/
+/*.content > .content-header {
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid #CDCDCD;
+    color: #fff;
+    width: 150%;
+    margin-left: -264px;
+    background-color: red;
+}
+
+
+.grey-gradient {
+    background: #131f2b url("gradient-bg.png") repeat-x top;
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background: -webkit-gradient( linear, left top, left bottom, from(#354350), to(#131f2b) );
+    background: -webkit-linear-gradient( top, #354350, #131f2b );
+    background: -moz-linear-gradient( top, #354350, #131f2b );
+    background: -o-linear-gradient( top, #354350, #131f2b );
+    background: linear-gradient( top, #354350, #131f2b );
+}   */          
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url('bg.png');
+    background-size: cover;
+    padding-bottom: 42px;
+}
+
+.container{
+  /*repeating-linear-gradient(
+      #EFEFBB,
+      #D4D3DD 60px,
+    );}*/
+    /*background: repeating-linear-gradient(to bottom right, red, red 5px, white 5px, white 10px);*/ }
+a {
+    color: #b41e8e;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-brand {
+    color: #b41e8e;
+    font-stretch: semi-expanded;
+    font-size: 25px;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+/*footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}*/
+
+.mount {
+    border: 1px inset #ccc;
+}
+.mount input {
+    border: 0;
+}
+/*
+form.ng-invalid {
+  border-color: red;
+  border-width: 2px;
+}
+
+*/
+/*.user.ng-valid {
+          background-color: lightgreen;
+      }
+      .user.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .user.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+ 
+      .fname.ng-valid {
+          background-color: lightgreen;
+      }
+      .fname.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .fname.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+*/
+/*input.ng-dirty.ng-invalid {
+  color: red;
+  border-color: red;
+  border-width: 2px;
+}*/
+
+ /*Ajustments*/
+/*.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(221, 221, 221);
+}*/
+/*
+form.submitted .ng-invalid
+{
+    border:1px solid #f00;
+}
+
+.form-control.ng-valid-maxlength.ng-dirty.ng-invalid.ng-invalid-required {
+    border: solid 2px red;
+}*/
+
+/*span {
+      color: red;
+}*/
+
+/*input.ng-dirty.ng-valid {
+    border-color: green;
+}
+
+input.ng-dirty.ng-invalid {
+    border-color: red;
+}
+*/
+/*.part2{
+width:250px;
+float: left;
+}
+.part1{
+float:right;
+}*/
+/*input.form-control {
+    float: right;
+    margin-top: -98px;
+}
+*/
+
+.input {
+width: 100%;
+ margin: 0;
+}
+
+/*input.ng-pristine {
+            background-color:yellow;
+        }*/
+
+        input.ng-dirty.ng-invalid {
+            border: solid 1px red;
+        }
+
+        input.ng-dirty.ng-valid {
+            border: solid 1px green;
+        }
+
+/*Fix navbar collapse with*/
+.sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-width: 17%;
+}
+
+.error {
+  color: red;
+}

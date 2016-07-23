@@ -1,0 +1,243 @@
+<body ng-controller="AppController as ctrl"><br>
+
+<div ng-app="myApp">
+    <h2>Mes collaborateurs</h2>
+
+    {{ legend }}<br/><br/>
+
+
+      <form ng-submit="ctrl.submit()" name="myForm">
+
+      <div ng-controller="ExampleController">
+        <fieldset class="form-group">
+
+            <label>Matricule RH:
+              <input type="text" name="input" class="form-control" ng-model="example.text" ng-maxlength="5" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un matricule" style="width: 700px;">
+            </label>
+        
+            <span ng-show="myForm.$dirty && myForm.input.$error.required" style="color: red;">Ce champs est requis</span><br />
+            <span ng-show="myForm.$dirty && myForm.input.$error.minlength" style="color: red;">Veuillez saisir 5 caractères</span><br />
+             <tt>text = {{example.text}}</tt><br/>
+              <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br/>
+              <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br/>
+              <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+              <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+
+
+            <label>Nom:
+            <input type="text" name="nom" class="form-control" ng-model="example.nom" ng-minlength="3" ng-maxlength="20" ng-pattern="example.word2" required ng-trim="false" placeholder="Entrez un nom" style="width: 700px;">
+            </label>
+            <span ng-show="myForm.$dirty && myForm.nom.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.nom.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+
+            <label>Prénom:
+            <input type="text" name="prenom" class="form-control" ng-model="example.prenom" ng-minlength="3" ng-maxlength="20" ng-pattern="example.word2" required ng-trim="false" placeholder="Entrez un prénom" style="width: 700px;" >
+            </label>
+            <span ng-show="myForm.$dirty && myForm.prenom.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.prenom.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+            <!-- <div role="alert">
+            <span class="error" ng-show="myForm.input.$error.required">
+              Required!</span>
+            <span class="error" ng-show="myForm.input.$error.pattern">
+              Single word only!</span>
+            </div> -->
+
+            <label>Adresse (N° rue/voie) :
+            <input type="text" name="num_rue" class="form-control" ng-model="example.num_rue" ng-pattern="example.word3" required ng-trim="false" placeholder="Entrez un n° de rue/voie" style="width: 700px;" >
+            </label>
+            <span ng-show="myForm.$dirty && myForm.num_rue.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.num_rue.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Ville : 
+            <input type="text" name="ville" class="form-control" ng-model="example.ville" ng-pattern="example.word2" required ng-trim="false" placeholder="Entrez une ville" style="width: 700px;"/>
+            </label>
+            <span ng-show="myForm.$dirty && myForm.ville.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.ville.$error.minlength" style="color: red;">Veuillez saisir 5 caractères</span>
+            <span ng-show="myForm.$dirty && myForm.ville.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Code postal :
+            <input type="text"  name="codep" class="form-control" ng-model="example.codep" ng-maxlength="5" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un code postal" style="width: 700px;"/></label>   
+            <span ng-show="myForm.$dirty && myForm.codep.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.codep.$error.minlength" style="color: red;">Veuillez saisir 5 caractères</span>
+            <span ng-show="myForm.$dirty && myForm.codep.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+
+            <label>Téléphone mobile :
+            <input type="text" name="tel_mobile" class="form-control" ng-model="example.tel_mobile" ng-maxlength="10" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un numéro de téléphone" style="width: 700px;"></label> 
+            <span ng-show="myForm.$dirty && myForm.tel_mobile.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.tel_mobile.$error.minlength" style="color: red;">Veuillez saisir 10 caractères</span>
+            <span ng-show="myForm.$dirty && myForm.tel_mobile.$invalid" style="color: red;">Ce champs est invalide</span><br/><br />
+            
+            <label>Avantages en nature :  
+            <input type="text" name="av_nature" class="form-control" ng-model="example.av_nature" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un montant" style="width: 700px;"/></label>
+            <span ng-show="myForm.$dirty && myForm.av_nature.$error.required"  style="color: red;">Ce champs est requis</span><br/><br/>
+
+            <label>Nombre d'accidents:
+            <input type="text" name="nbaccident" class="form-control" ng-model="example.nbaccident" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un nombre" style="width: 700px;"></label>
+            <span ng-show="myForm.$dirty && myForm.nbaccident.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.nbaccident.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Accident 1:
+            <input type="text" name="accident" class="form-control" ng-model="example.accident" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un montant" style="width: 700px;"></label>
+            <span ng-show="myForm.$dirty && myForm.accident.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.accident.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Accident 2:
+            <input type="text" name="accident2" class="form-control" ng-model="example.accident2" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un montant" style="width: 700px;"></label>
+            <span ng-show="myForm.$dirty && myForm.accident2.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.accident2.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Accident 3:
+            <input type="text" name="accident3" class="form-control" ng-model="example.accident3" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un montant" style="width: 700px;"></label>
+            <span ng-show="myForm.$dirty && myForm.accident3.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.accident3.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+            <label>Accident 4:
+            <input type="text" name="accident4" class="form-control" ng-model="example.accident4" ng-pattern="example.word" required ng-trim="false" placeholder="Entrez un montant" style="width: 700px;"></label>
+            <span ng-show="myForm.$dirty && myForm.accident4.$error.required" style="color: red;">Ce champs est requis</span>
+            <span ng-show="myForm.$dirty && myForm.accident4.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+            </div>
+
+            <tt>text = {{example.text}}</tt><br/>
+            <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br/>
+            <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br/>
+            <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+            <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+
+           </fieldset>
+
+           <hr>
+           </div>
+
+<div ng-controller="SetDateCtrl" class="another">
+<label for="start">Date d'arrivée:</label>
+    <div class="input-group date" data-provide="datepicker">
+      <input id="dp1" type="text" class="form-control" id="datepicker" readonly="readonly" required placeholder="Data CheckIn">
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div><br />
+    <label for="end">Date de départ:</label>
+    <div class="input-group date" data-provide="datepicker">
+      <input id="dp2" type="text" class="form-control" id="datepicker" readonly="readonly" required placeholder="Data CheckOut" >
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+
+    </div><br /><br />
+
+      <label for="comments">Commentaires:</label><br>
+      <textarea cols="" rows="" class="form-control"></textarea></div><br / >
+
+    <div ng-controller="SelectController" class="back">
+     <label for="singleSelect">Selectionnez une profession:</label><br>
+    <select name="singleSelect" ng-model="professionList.singleSelect" class="form-control" required>
+<!--       <option>Selectionnez une profession</option>-->
+      <option value="option-1">APM</option>
+      <option value="option-2">AR</option>
+      <option value="option-3">ARS</option>
+    </select><br />
+    </div>
+    <br />
+    <label for="singleSelect">Selectionnez un collaborateur:</label><br>
+    <select name="singleSelect" ng-model="collabList.singleSelect" class="form-control" required>
+<!--       <option>Selectionnez une profession</option>-->
+      <option value="option-1">JCW</option>
+      <option value="option-2"></option>
+      <option value="option-3"></option>
+    </select>
+    <br />
+
+     <label for="singleSelect">Selectionnez un véhicule:</label><br>
+    <select name="singleSelect" ng-model="vhList.singleSelect" class="form-control" required>
+<!--       <option>Selectionnez une profession</option>-->
+      <option value="option-1">Alfa Romeo</option>
+      <option value="option-2">BMW</option>
+      <option value="option-3">Audii</option>
+    </select><br />
+
+    <div ng-controller="SetDateCtrl" class="another">
+<label for="start">Début location:</label>
+    <div class="input-group date" data-provide="datepicker">
+      <input id="dp1" type="text" class="form-control" id="datepicker" readonly="readonly" required placeholder="Data CheckIn">
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div><br />
+    <label for="end">Fin location:</label>
+    <div class="input-group date" data-provide="datepicker">
+      <input id="dp2" type="text" class="form-control" id="datepicker" readonly="readonly" required placeholder="Data CheckOut" >
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div><br/>
+
+</form>
+<button type="submit" value="Submit">Submit</button>
+  <button type="reset" value="Reset">Reset</button>
+
+        
+
+      
+ <!--  <script type="text/javascript">
+    $(function() {
+    $( "#datepicker" ).datepicker({ minDate: 0});
+  });
+  </script> -->
+<!--   <script type="text/javascript">
+    var nowTemp = new Date();
+var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+var checkin = $('#dp1').datepicker({
+
+    beforeShowDay: function (date) {
+        return date.valueOf() >= now.valueOf();
+    },
+    autoclose: true
+
+}).on('changeDate', function (ev) {
+    if (ev.date.valueOf() > checkout.datepicker("getDate").valueOf() || !checkout.datepicker("getDate").valueOf()) {
+
+        var newDate = new Date(ev.date);
+        newDate.setDate(newDate.getDate() + 1);
+        checkout.datepicker("update", newDate);
+
+    }
+    $('#dp2')[0].focus();
+});
+
+
+var checkout = $('#dp2').datepicker({
+    beforeShowDay: function (date) {
+              // return date.valueOf() >= now.valueOf();
+
+        if (!checkin.datepicker("getDate").valueOf()) {
+            return date.valueOf() >= new Date().valueOf();
+        } else {
+            return date.valueOf() > checkin.datepicker("getDate").valueOf();
+        }
+    },
+    autoclose: true
+
+}).on('changeDate', function (ev) {});
+  </script> -->
+
+     <script>
+          angular.module('myApp', [])
+          .controller('AppController', [function($scope) {
+              var self = this;
+              self.submit = function() {
+                  console.log('Form is submitted with following user', self.user);
+            };
+
+      }]);
+  </script>
+  <script type="text/javascript">
+    $(function() {
+    $( "#datepicker" ).datepicker({ minDate: 0});
+  });
+  </script>
+   </div>
+  </body>

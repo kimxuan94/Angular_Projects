@@ -1,0 +1,98 @@
+<body ng-controller="AppController as ctrl"><br>
+
+<div ng-app="myApp">
+		<h2>Mes véhicules de location</h2>
+
+		{{ legend }}<br/><br/>
+
+      <form ng-submit="ctrl.submit()" name="myForm" ng-controller="Ctrl">
+
+	<fieldset class="form-group">
+	<h4>Carte grise du véhicule:</h4>
+	<label for="immatVEH">Immatriculation du véhicule:</label>
+	<input type="text" ng-model="ctrl.user.immatVEH" name="immatVEH" class="form-control" ng-maxlength="10" placeholder="Entrez un numéro d'immatriculation" required />
+	 <span ng-show="myForm.$dirty && myForm.immatVEH.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.immatVEH.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+	<span ng-show="myForm.$dirty && myForm.immatVEH.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+	<label for="started">Date de 1<sup>ère</sup> mise en circulation:</label>
+		<div class="input-group date" data-provide="datepicker">
+			<input type="text" class="form-control" required>
+				<div class="input-group-addon">
+					<span class="glyphicon glyphicon-th"></span>
+				</div>
+		</div><br>
+	<label for="sela">Marque du véhicule:</label>
+		<select ng-model="sela" name="sela" class="form-control" required>
+		<option>Sélectionnez un véhicule</option>
+		<option>BMW</option>
+		<option>Audi</option>
+		<option>Alfa Romeo</option>
+		<option>Autre</option>
+		</select>
+		<span class="ng-invalid" ng-show="myForm.sela.$dirty && myForm.vehicule_id.$invalid"  style="color: red;">Vous devez sélectionner une véhicule</span><br/><br/>
+          <br />
+	<small class="text-muted">Choix unique</small><br><br>
+	<label for="selb">Modèle du véhicule:</label>
+		<select class="form-control" id="selb" required>
+		<option>Sélectionnez un modèle</option>
+		<option>X3</option>
+		<option>M3 Cabriolet</option>
+		<option>A3 Cabriolet</option>
+		<option>Autre</option>
+		</select>
+	<small class="text-muted">Choix unique</small><br><br>
+	<label for="version">Version:</label>
+	<input type="text" ng-model="ctrl.user.version" name="version" class="form-control"placeholder="Entrez le numéro de version" required>
+	<span ng-show="myForm.$dirty && myForm.version.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.version.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+	<label for="chassis">N° de chassis:</label>
+	<input type="text" ng-model="ctrl.user.chassis" name="chassis" class="form-control" placeholder="Entrez un numéro de chassis" required> <span ng-show="myForm.$dirty && myForm.chassis.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.chassis.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+	<span ng-show="myForm.$dirty && myForm.chassis.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+	<label for="selc">Carburant:</label>
+		<select class="form-control" id="selc" required>
+		<option>Diesel</option>
+		<option>Gazole</option>
+		<option>Excellium</option>
+		</select><br>
+		<label for="seld">Type de boîte de vitesse:</label>
+		<select class="form-control" id="seld" required>
+		<option>Automatique</option>
+		<option>Manuelle</option>
+		</select><br>
+	<label for="cap">Capacité du réservoir:</label>
+	<input type="text" ng-model="ctrl.user.cap" name="cap" class="form-control" id="cap" placeholder="Entrez la capacité" required> <span ng-show="myForm.$dirty && myForm.cap.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.cap.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+	<span ng-show="myForm.$dirty && myForm.cap.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+	<label for="nbportes">Nombre de portes:</label>
+	<input type="number" ng-model="ctrl.user.nbportes" class="form-control"  placeholder="Sélectionnez un nombre" required> <span ng-show="myForm.$dirty && myForm.nbportes.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.nbportes.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+	<span ng-show="myForm.$dirty && myForm.nbportes.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+	<label for="nbplaces">Nombre de places:</label>
+	<input type="number" ng-model="ctrl.user.nbplaces" class="form-control" placeholder="Sélectionnez un nombre" required> <span ng-show="myForm.$dirty && myForm.nbplaces.$error.required" style="color: red;">Ce champs est requis</span>
+	<span ng-show="myForm.$dirty && myForm.nbplaces.$error.minlength" style="color: red;">Veuillez saisir 5 chiffres</span>
+	<span ng-show="myForm.$dirty && myForm.nbplaces.$invalid" style="color: red;">Ce champs est invalide</span><br/><br/>
+
+	<label for="co2">Qté de CO<sub>2</sub>(g/km):</label>
+	<input type="text" ng-model="ctrl.user.co2" name="co2" class="form-control" placeholder="Entrez une valeur" required>
+	 <span ng-show="myForm.$dirty && myForm.co2.$error.required" style="color: red;">Ce champs est requis</span><br/><br/>
+     <span ng-show="myForm.$dirty && myForm.co2.$error.minlength" style="color: red;">Veuillez saisir 13 caractères</span>
+     <span ng-show="myForm.$dirty && myForm.co2.$invalid" style="color: red;">Ce champs est invalide</span><br/>
+	</fieldset>
+		   <input type="reset" value="Effacer"/>
+	       <input type="submit"  value="Envoyer" ng-disabled="myForm.$invalid">
+	</form>
+	<script>
+	angular.module('myApp', [])
+	.controller('AppController', [function($scope) {
+	var self = this;
+	self.submit = function() {
+	console.log('Form is submitted with following user', self.user);
+	};
+
+
+	}]);
+  </script>
+   </div>
+  </body>

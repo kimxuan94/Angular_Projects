@@ -1,0 +1,319 @@
+	<h2>Mes collaborateurs</h2>
+
+	{{ legend }}
+
+	<br><br />
+
+	<div ng-app="floatApp">
+	<h4>Informations personnelles:</h4>
+		<div ng-repeat="model in models">
+            <span ng-bind="model.caption"></span>
+            <div ng-form name="index">
+			 <!--  <fieldset class="form-group">
+            <input type="text" class="form-control" name="input{{$index}}" class="form-control"
+            ng-disabled="model.isDisabled"
+            minlength="{{model.minlength}}"
+            maxlength="{{model.maxlength}}"
+            ng-show="model.isShow"
+            ng-pattern="regEx"
+            ng-required="true" />
+            <br><br />
+            {{employees[model.name]}}
+            </div>
+        </div>
+	 -->
+<!-- 		<form>
+ -->		
+			  <fieldset class="form-group">
+<!-- 			    <label for="matRH">Matricule RH:</label>
+ --><!-- 			    <input type="text" class="form-control" id="matRH" placeholder="Entrez un matricule">
+ -->			    <!-- <input type="text" class="form-control" name="input{{$index}}" ng-model="name"
+            ng-disabled="model.isDisabled"
+            minlength="{{model.minlength}}"
+            maxlength="{{model.maxlength}}"
+            ng-show="model.isShow"
+            ng-pattern="regEx"
+            required/> -->
+
+             <label>
+<!--    Enter your name:-->
+    <input type="text" class="form-control" name="matRH"
+            ng-disabled="model.isDisabled"
+            minlength="{{model.minlength}}"
+            maxlength="{{model.maxlength}}"
+            ng-show="model.isShow"
+            ng-pattern="regEx"
+            ng-required="true" />
+  </label>
+
+   <pre>index.matRH.$error = {{ myForm.matRH.$error | json }}</pre>
+
+  <div ng-messages="index.matRH.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+    <div ng-message="maxlength">Your field is too long</div>
+  </div>
+
+			   <!--  <small class="text-muted">Matricule à 5 chiffres</small><br><br>
+			    <label for="nom">Nom:</label>
+			    <input type="text" class="form-control" id="nom" placeholder="Entrez un nom">
+			    <small class="text-muted">Au minimum 2 lettres</small><br><br>
+			    <label for="prenom">Prénom:</label>
+			    <input type="text" class="form-control" id="prenom" placeholder="Entrez un prénom">
+			    <small class="text-muted">Au minimum 3 lettres</small><br><br>
+			    <label for="residence">Adresse de résidence:</label>
+			    <input type="text" class="form-control" id="residence" placeholder="Entrez une adresse de résidence"><br><br>
+			    <label for="rue">Rue/Voie:</label>
+			    <input type="text" class="form-control" id="rue" placeholder=""><br>
+			    <label for="codep">Code postal:</label>
+			    <input type="text" class="form-control" id="codep" placeholder="Entrez un code postal">
+			    <small class="text-muted">Au minimum 4 chiffres</small><br><br>
+			    <label for="ville">Ville:</label>
+			    <input type="text" class="form-control" id="ville" placeholder="Entrez une ville"><br>
+			    <label for="numero">Téléphone mobile:</label>
+			    <input type="text" class="form-control" id="numero" placeholder="Entrez un numéro de téléphone"><br> -->
+			  </fieldset>
+		<!-- 	       <div ng-messages="frm{{$index}}.input{{$index}}.$error" style="color:maroon" role="alert">
+				    <div ng-message="required">You did not enter a field</div>
+				    <div ng-message="minlength">Your field is too short</div>
+				    <div ng-message="maxlength">Your field is too long</div>
+  				</div> -->
+<!-- <label>
+    Enter your name:
+    <input type="text"
+           name="myName"
+           ng-model="name"
+           ng-minlength="5"
+           ng-maxlength="20"
+           required />
+  </label>
+  <pre>myForm.myName.$error = {{ myForm.myName.$error | json }}</pre>
+
+  <div ng-messages="myForm.myName.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+    <div ng-message="maxlength">Your field is too long</div>
+  </div> -->
+
+
+
+<!-- 	  	<h4>Informations professionnelles:</h4>
+		  <fieldset class="form-group">
+		     <div class="form-group">
+		  		<label for="sel1">Sélectionnez une profession:</label>
+		  			<select class="form-control" id="sel1">
+		    			<option>APM</option>
+		    			<option>AR</option>
+		    			<option>ARS</option>
+		  			</select>
+		    <small class="text-muted">Choix unique</small>
+		    <br><br>
+		        <label for="pj">PJ à attacher:</label>
+				<input type=file name="upfile"><br>
+				<label for="avtg">Avantages en nature:</label>
+		   		<span class="mountinput">(en €)<input type="text" class="form-control" id="avtg" name="mount" placeholder="Entrez un montant"></span>
+		    	<small class="text-muted">A renseigner seulement s'il y a avantages en nature</small><br><br>    				
+				<table class="table" id="datepicker">
+					<thead>
+						<tr>
+							<th><label for="started">Début de contrat:</label>
+								<div class="input-group date" data-provide="datepicker">
+									<input type="text" class="form-control">
+										<div class="input-group-addon">
+		    								<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div></th>
+							<th><label for="finished">Fin de contrat:</label>
+								<div class="input-group date" data-provide="datepicker">
+									<input type="text" class="form-control">
+										<div class="input-group-addon">
+		    								<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div></th>
+						</tr>
+					</thead>
+					<thead>
+						<tr>
+							<th><label for="comments">Commentaires:</label><br>
+									    <textarea rows="10" cols="50"></textarea><button type="submit" class="btn pull-right">Enregistrer</button>
+							</th>
+						</tr>
+					</thead>
+				</table>
+					</div>
+		  </fieldset> -->
+<!-- 	  </form>
+ -->	</div>
+ 	</div>
+
+ 	<table class="table" id="datepicker">
+					<thead>
+						<tr>
+							<th><label for="started">Début de contrat:</label>
+								<div class="input-group date" data-provide="datepicker">
+									<input type="text" class="form-control">
+										<div class="input-group-addon">
+		    								<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div></th>
+							<th><label for="finished">Fin de contrat:</label>
+								<div class="input-group date" data-provide="datepicker">
+									<input type="text" class="form-control">
+										<div class="input-group-addon">
+		    								<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div></th>
+						</tr>
+					</thead><br>
+					<thead>
+						<tr>
+							<th><br><!-- <label for="comments">Commentaires:</label><br>
+									    <textarea rows="10" cols="50"></textarea><button type="submit" class="btn pull-right">Enregistrer</button> -->
+									    <div class="pull-right">
+							 			<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/><br>
+							 			</div>
+							 			<label for="comments">Commentaires:</label><br>
+									    <textarea rows="10" cols="50"></textarea><button type="submit" class="btn pull-right">Enregistrer</button>
+
+							</th>
+						</tr>
+					</thead>
+				</table>
+</div>
+<!-- <div ng-app="floatApp">
+ <div ng-controller="CollabController">
+    <h4>Informations personnelles:</h4>
+      <form name="test" class="form-inline">
+        <div ng-repeat="model in models">
+            <span ng-bind="model.caption"></span>
+            <div ng-form name="frm{{$index}}">
+			  <fieldset class="form-group">
+            <input type="text" class="form-control" name="input{{$index}}" class="form-control"
+            ng-disabled="model.isDisabled"
+            minlength="{{model.minlength}}"
+            maxlength="{{model.maxlength}}"
+            ng-show="model.isShow"
+            ng-pattern="regEx"
+            ng-required="true" />
+            <br><br />
+            {{employees[model.name]}}
+            </div>
+        </div>
+        <label for="repeatSelect"> Sélectionnez une profession: </label><br>
+        <select name="repeatSelect" ng-model="employees.repeatSelect" ng-required="true">
+        <option value="id">APM</option>
+        <option value="id">AR</option>
+        <option value="id">ARS</option>
+        </select></fieldset><br><br />
+        
+        <textarea id="textarea"
+          ng-model="txt"
+          [required="string"]
+          [ng-required="string"]
+          [ng-minlength="number"]
+          [ng-maxlength="number"]
+          [ng-pattern="string"]
+          [ng-change="string"]
+          [ng-trim="boolean"]>
+          </textarea>
+    </form>
+</div>
+    
+
+<div ng-app="floatApp">
+	<div ng-controller="CollabController">
+		<div class="row">
+  			<div class="col-lg-6">
+    			<h4>Informations personnelles:</h4>
+       			<div ng-repeat="model in models">
+            			<span ng-bind="model.caption"></span>
+            				<div ng-form name="frm{{$index}}">
+						      <span class="input-group">
+						      <input type="text" class="form-control" name="input{{$index}}" class="form-control"
+            					ng-disabled="model.isDisabled"
+            					minlength="{{model.minlength}}"
+           	 					maxlength="{{model.maxlength}}"
+            					ng-show="model.isShow"
+            					ng-pattern="regEx"
+            					ng-required="true" />
+						    </div>
+						  </div>
+						  <div class="col-lg-6">
+						    <div class="input-group">
+						      <span class="input-group-addon">
+					      </span>
+						     <input type="text" class="form-control" name="input{{$index}}" class="form-control"
+					            ng-disabled="model.isDisabled"
+					            minlength="{{model.minlength}}"
+					            maxlength="{{model.maxlength}}"
+					            ng-show="model.isShow"
+					            ng-pattern="regEx"
+					            ng-required="true" />
+					            </span>
+						    </div>
+
+            			</div>
+           </div>
+        </div>
+	</div>
+</div>
+ -->
+
+<hr>
+
+<h4>Form controls</h4>
+
+<!-- <form name="myForm">
+  <label>
+    Enter your name:
+    <input type="text"
+           name="myName"
+           ng-model="name"
+           ng-minlength="5"
+           ng-maxlength="20"
+           required />
+  </label>
+  <pre>myForm.myName.$error = {{ myForm.myName.$error | json }}</pre>
+
+  <div ng-messages="myForm.myName.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+    <div ng-message="maxlength">Your field is too long</div>
+  </div>
+</form>
+ -->
+ <form name="exampleForm" class="elegant-aero">
+      <label>First Name:</label>
+      <input type="text" name="userFirstName" ng-model="firstName" required />
+      <div ng-messages="exampleForm.userFirstName.$error">
+        <div ng-message="required">This field is required</div>
+      </div>
+
+      <label>Last Name:</label>
+      <input type="text" name="userLastName" ng-model="lastName" required />
+      <div ng-messages="exampleForm.userLastName.$error">
+        <div ng-message="required">This field is required</div>
+      </div>
+
+      <label>Email Address:</label>
+      <input type="email" name="userEmail" ng-model="email" required />
+      <div ng-messages="exampleForm.userEmail.$error">
+        <div ng-message="required">This field is required</div>
+        <div ng-message="email">Your email address is invalid</div>
+      </div>
+
+      <label>Phone Number:</label>
+      <input type="email" name="userPhoneNumber" ng-model="phoneNumber" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required/>
+      <div ng-messages="exampleForm.userPhoneNumber.$error">
+        <div ng-message="required">This field is required</div>
+        <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+      </div>
+
+      <label>User Message:</label>
+      <textarea type="text" name="userMessage" class="form-control" rows="4" ng-model="message" ng-minlength="100" ng-maxlength="1000" required></textarea>
+      <div ng-messages="exampleForm.userMessage.$error">
+        <div ng-message="required">This field is required</div>
+        <div ng-message="minlength">Message must be over 100 characters</div>
+        <div ng-message="maxlength">Message must not exceed 1000 characters</div>
+      </div>
+    </form>

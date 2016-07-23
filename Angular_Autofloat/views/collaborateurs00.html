@@ -1,0 +1,28 @@
+
+  <div ng-app ng-controller="controleur">
+    <h1>Ajout de collaborateurs</h1>
+    <form name="ajoutUtilisateur"ng-submit="soumission(ajoutUtilisateur.$valid)">
+			<label for="nom">Nom :</label>
+			<input type="text" id="nom" placeholder="Entrez le nom" ng-model="user.nom" required><br><br>
+			<label for="prenom">Prénom :</label>
+			<input type="text" id="prenom" placeholder="Entrez le prénom" ng-model="user.prenom" required><br><br>
+			<label>Rôle : </label>
+			<label><input type="radio" id="actif" value="Actif" ng-model="user.role"> Actif</label>
+			<label><input type="radio" id="membre" value="Membre" ng-model="user.role"> Membre</label>
+		  <div ng-show="message">{{message}}</div>
+		  <button type="submit">Ajouter</button>
+    </form>
+	<table>
+		<caption>Utilisateurs</caption>
+		<tr>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Rôle</th>
+		</tr>
+		<tr ng-repeat="utilisateur in utilisateurs">
+			<td>{{utilisateur.nom | uppercase}}</td>
+			<td>{{utilisateur.prenom}}</td>
+			<td>{{utilisateur.role}}</td>
+		</tr>
+	</table>
+</div>
